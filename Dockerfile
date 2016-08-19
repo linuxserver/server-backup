@@ -22,9 +22,15 @@ RUN \
 
 # install runtime packages
  apk add --no-cache \
+	expat \
+	gdbm \
+	libbz2 \
+	libffi \
 	librsync \
 	openssh \
-	python && \
+	popt \
+	python \
+	sqlite-libs && \
 
 # build rdiff-backup
  mkdir -p \
