@@ -22,7 +22,9 @@ RUN \
 
 # install runtime packages
  apk add --no-cache \
-	openssh && \
+	librsync \
+	openssh \
+	python && \
 
 # build rdiff-backup
  mkdir -p \
