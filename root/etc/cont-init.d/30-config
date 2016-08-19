@@ -10,7 +10,6 @@ mkdir -p \
 [[ ! -e /config/ssh/id_rsa.pub ]] || \
 [[ ! -e /config/ssh/id_rsa ]] || \
 [[ ! -e /config/ssh/config ]] || \
-[[ ! -e /config/ssh/known_hosts ]] || \
 [[ ! -e /config/cron/jobs ]] && \
 ( echo "required config not found" && exit 1)
 
