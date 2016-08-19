@@ -1,0 +1,29 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/config/ssh \
+	/config/cron \
+	/root/.ssh
+
+# check for required config files, exit if not found
+[[ ! -e /config/ssh/id_rsa.pub ]] || \
+[[ ! -e /config/ssh/id_rsa ]] || \
+[[ ! -e /config/ssh/config ]] || \
+[[ ! -e /config/ssh/known_hosts ]] || \
+[[ ! -e /config/cron/jobs ]] && \
+( echo "required config not found" && exit 1)
+
+# copy config
+cp -pr /config/ssh/* /root/.ssh/
+
+# set cron
+crontab /config/cron/jobs
+
+# permissions
+chown -R abc:abc \
+	/config
+chown -R root:root \
+	/root/.ssh
+chmod -R 600 \
+	/root/.ssh/*
