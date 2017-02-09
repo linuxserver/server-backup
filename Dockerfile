@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:35
+FROM lsiobase/alpine:3.5
 MAINTAINER sparklyballs
 
 # package version
