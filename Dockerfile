@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM lsiobase/alpine:35
 MAINTAINER sparklyballs
 
 # package version
@@ -29,7 +29,7 @@ RUN \
 	librsync \
 	openssh \
 	popt \
-	python \
+	python2 \
 	sqlite-libs && \
 
 # build rdiff-backup
